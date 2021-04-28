@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>820</width>
+    <height>668</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="CarSpeedText">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Car Speed:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="BodyMassText">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Body Mass:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="DampingCoefficientText">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Damping Coefficient:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="WheelMassText">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wheel Mass:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="CarSpeedInput">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>40</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>55</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="BodyMassInput">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>60</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>2000</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="WheelMassInput">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>80</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>50</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="DampingCoefficientInput">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>100</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0.5</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="CarSpeedUnit">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>40</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>mph</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="BodyMassUnit">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>60</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>lbs</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="WheelMassUnit">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>80</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>lbs</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="DampingCoefficientUnit">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>100</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>lbf s/in</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="SpringConstantsText">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>30</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Spring Constants:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="k1Text">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>50</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>k1:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="k2Text">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>70</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>k2:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="k1Input">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>50</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>900</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="k2Input">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>70</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>900</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="k1Unit">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>50</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>lb/in</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="k2Unit">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>70</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>lb/in</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Calculate">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>110</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Calculate</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="InputBox">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>621</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>INPUT</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>19</x>
+     <y>179</y>
+     <width>781</width>
+     <height>471</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout"/>
+  </widget>
+  <zorder>InputBox</zorder>
+  <zorder>CarSpeedText</zorder>
+  <zorder>BodyMassText</zorder>
+  <zorder>DampingCoefficientText</zorder>
+  <zorder>WheelMassText</zorder>
+  <zorder>CarSpeedInput</zorder>
+  <zorder>BodyMassInput</zorder>
+  <zorder>WheelMassInput</zorder>
+  <zorder>DampingCoefficientInput</zorder>
+  <zorder>CarSpeedUnit</zorder>
+  <zorder>BodyMassUnit</zorder>
+  <zorder>WheelMassUnit</zorder>
+  <zorder>DampingCoefficientUnit</zorder>
+  <zorder>SpringConstantsText</zorder>
+  <zorder>k1Text</zorder>
+  <zorder>k2Text</zorder>
+  <zorder>k1Input</zorder>
+  <zorder>k2Input</zorder>
+  <zorder>k1Unit</zorder>
+  <zorder>k2Unit</zorder>
+  <zorder>Calculate</zorder>
+  <zorder>verticalLayoutWidget</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
