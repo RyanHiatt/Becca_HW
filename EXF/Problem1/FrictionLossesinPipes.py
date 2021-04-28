@@ -53,7 +53,7 @@ class PipeFriction():
             self.volumetric_flow_rate = float(input('Volumetric Flow Rate(L/m): '))
             self.calc_head_loss(9.81)
             print('\n'*2)
-            print(f'Reynolds Number: {self.Re:.2f}()\nFlow Regime: {self.flow}()\nHead Loss: {self.head_loss:.2f}()')
+            print(f'Reynolds Number: {self.Re:.2f}\nFlow Regime: {self.flow}\nHead Loss: {self.head_loss:.2f} N/m^2')
 
         elif self.units == 1:  # English
             self.fluid_dynamic_viscosity = float(input('Fluid Viscosity(lb*s/ft^2): '))
@@ -63,7 +63,7 @@ class PipeFriction():
             self.volumetric_flow_rate = float(input('Volumetric Flow Rate(Gpm): '))
             self.calc_head_loss(32.2)
             print('\n' * 2)
-            print(f'Reynolds Number: {self.Re:.2f}()\nFlow Regime: {self.flow}()\nHead Loss: {self.head_loss:.2f}()')
+            print(f'Reynolds Number: {self.Re:.2f}\nFlow Regime: {self.flow}\nHead Loss: {self.head_loss:.2f} lb/ft^2')
 
 
 if __name__ == '__main__':
