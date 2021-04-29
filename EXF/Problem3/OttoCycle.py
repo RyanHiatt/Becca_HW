@@ -1,4 +1,4 @@
-
+import numpy as np
 
 class OttoCycle:
     def __init__(self):
@@ -20,6 +20,7 @@ class OttoCycle:
         self.T = []
         self.P = []
         self.V = []
+        self.s = []
         self.Q_in = None
         self.Q_out = None
         self.eff = None
@@ -80,7 +81,7 @@ class Controller:
     def process_3_4(self):
 
         self.model.T.append(self.model.T[2] * (1 / self.model.compression_ratio) ** (self.model.k - 1))
-        self.model.P.append((1 / self.model.compression_ratio) * (self.model.T[3] / self.model.T[2]) * self.model.P[2])  # TODO
+        self.model.P.append((1 / self.model.compression_ratio) * (self.model.T[3] / self.model.T[2]) * self.model.P[2])
         self.model.V.append((self.model.mass * self.model.R * self.model.T[3]) / self.model.P[3])
         print(f'Point4: T={self.model.T[3]:.2f}, P={self.model.P[3]:.2f}, V={self.model.V[3]}')
 
@@ -93,42 +94,41 @@ class Controller:
         self.model.eff = (self.model.Q_in - self.model.Q_out) / self.model.Q_in
         print(f'Efficiency = {self.model.eff}')
 
-    def plot_cycle_xy(self, x='v', y='P', ax=None):
-        if x == y:
-            return
-
-        self.view.plot_cycle_xy(x=x, y=y, ax=ax, model=self.model)
-
-
+    def plot_cycle_xy(self, type, ax=None):
+        self.view.plot_cycle_xy(type=type, ax=ax, model=self.model)
 
 
 class View:
     def __init__(self):
         pass
 
-    @staticmethod
     def celsius_to_kelvin(self, c_temp):
         return c_temp + 273.15
 
-    @staticmethod
     def kelvin_to_celsius(self, k_temp):
         return k_temp - 273.15
 
-    @staticmethod
     def kelvin_to_fahrenheit(self, k_temp):
         return (k_temp - 273.15) * 9/5 + 32
 
-    def plot_cycle_xy(self, x='v', y='P', ax=None, model=None):
+    def plot_cycle_xy(self, type, ax=None, model=None):
 
-        # Plot Process 1_2
-        ax.plot(10, 10)
-        # Plot Process 2_3
-        ax.plot()
-        # Plot Process 3_4
-        ax.plot()
-        # Plot Process 4_1
-        ax.plot()
+        if type == 'P-V':  # P vs V
+            # Plot Process 1_2
+            ax.plot([model.V[0], model.V[1]], [model.P[0], model.P[1]], label='Process 1 -> 2')
+            # Plot Process 2_3
+            ax.plot([model.V[1], model.V[2]], [model.P[1], model.P[2]], label='Process 2 -> 3')
+            # Plot Process 3_4
+            ax.plot([model.V[2], model.V[3]], [model.P[2], model.P[3]], label='Process 3 -> 4')
+            # Plot Process 4_1
+            ax.plot([model.V[3], model.V[0]], [model.P[3], model.P[0]], label='Process 4 -> 1')
+            ax.set(xlabel='Volume', ylabel='Pressure', title='P v Graph')
+            ax.legend()
 
-
-
-
+        elif type == 'T-S':  # T vs s
+            # Plot Process 2_3
+            ax.plot([model.Q_in / model.T[1], model.Q_in / model.T[2]], [model.T[1], model.T[2]], label='Process 2 -> 3')
+            # Plot Process 4_1
+            ax.plot([model.Q_out / model.T[3], model.Q_out / model.T[0]], [model.T[3], model.T[0]], label='Process 4 -> 1')
+            ax.set(xlabel='Entropy', ylabel='Temperature', title='T S Graph')
+            ax.legend()

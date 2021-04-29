@@ -7,6 +7,7 @@ from matplotlib.figure import Figure
 
 from OttoCycle import OttoCycle, Controller, View
 
+# TODO change two combo butttons into one selector with P-V and T-S options
 
 class MainWindow(qtw.QWidget, Ui_Form):
     def __init__(self):
@@ -70,9 +71,8 @@ class MainWindow(qtw.QWidget, Ui_Form):
 
     def doPlot(self):
         self.ax.clear()
-        X = self.cmb_Abcissa.currentText()
-        Y = self.cmb_Ordinate.currentText()
-        self.controller.plot_cycle_XY(x=X, y=Y, ax=self.ax)
+        type = self.cmb_Xaxis.currentText()
+        self.controller.plot_cycle_xy(type=type, ax=self.ax)
         self.canvas.draw()
 
 

@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/EXF/Problem3/air_table.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/Exam3/Problem1/Quarter Car Model.py">
           <value>
             <Attribute>
