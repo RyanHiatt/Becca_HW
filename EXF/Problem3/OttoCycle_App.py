@@ -28,6 +28,7 @@ class MainWindow(qtw.QWidget, Ui_Form):
         # Signals and Slots
         self.btn_Calculate.clicked.connect(self.run_backend)
         self.rdo_Metric.toggled.connect(self.set_output)
+        self.cmb_graph.currentIndexChanged.connect(self.doPlot)
 
         # show the form
         self.show()
@@ -71,7 +72,7 @@ class MainWindow(qtw.QWidget, Ui_Form):
 
     def doPlot(self):
         self.ax.clear()
-        type = self.cmb_Xaxis.currentText()
+        type = self.cmb_graph.currentText()
         self.controller.plot_cycle_xy(type=type, ax=self.ax)
         self.canvas.draw()
 

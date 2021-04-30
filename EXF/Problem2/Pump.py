@@ -1,3 +1,4 @@
+import numpy as np
 
 
 class Pump:
@@ -41,6 +42,19 @@ class Pump:
                 self.head.append(l[1])
                 self.efficiency.append(l[2].strip())
                 i += 1
+
+    def list_to_string(self, list):
+        string = ''
+        for element in list:
+            string += element
+            string += ', '
+        return string
+
+    def plot_data(self, ax1, ax2):
+
+        ax1.plot(100, 100)
+        ax2.plot(50, 50)
+
 
 
 if __name__ == '__main__':

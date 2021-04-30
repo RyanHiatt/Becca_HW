@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1059</width>
+    <width>1081</width>
     <height>1041</height>
    </rect>
   </property>
@@ -834,19 +834,6 @@
     </widget>
    </item>
    <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item>
     <widget class="QGroupBox" name="gb_Plot">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -863,8 +850,21 @@
       <string>Plot</string>
      </property>
      <layout class="QGridLayout" name="grid_Plot">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbl_Abcissa">
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Graph</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="1">
-       <widget class="QComboBox" name="cmb_Xaxis">
+       <widget class="QComboBox" name="cmb_graph">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -882,89 +882,17 @@
         </property>
         <item>
          <property name="text">
-          <string>v</string>
+          <string>P-V</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>P</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>T</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>s</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QComboBox" name="cmb_Yaxis">
-        <property name="maximumSize">
-         <size>
-          <width>50</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="currentIndex">
-         <number>0</number>
-        </property>
-        <item>
-         <property name="text">
-          <string>P</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>v</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>T</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>s</string>
+          <string>T-S</string>
          </property>
         </item>
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QLabel" name="lbl_Ordinate">
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Ordinate (y)</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="lbl_Abcissa">
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Abcissa (x)</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="4">
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -979,6 +907,19 @@
       </item>
      </layout>
     </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
