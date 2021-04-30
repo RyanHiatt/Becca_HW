@@ -12,14 +12,15 @@ class MainWindow(qtw.QWidget, Ui_Form):
         """MainWindow constructor"""
         super().__init__()
         self.setupUi(self)
-        # Main UI code goes here
-        self.model = Pump()
 
         # creating a canvas to draw a figure for the rankine cycle
         self.figure = Figure(figsize=(3, 8), tight_layout=True, frameon=True, facecolor='none')
         self.canvas = FigureCanvasQTAgg(self.figure)
-        self.ax1 = self.figure.add_subplot()
+        # self.ax = self.figure.add_subplot()
         self.graph_layout.addWidget(self.canvas)
+
+        # Main UI code goes here
+        self.model = Pump(self.figure.add_subplot())
 
         # Signals and Slots
         self.btn_Calculate.clicked.connect(self.calculate)
@@ -48,7 +49,8 @@ class MainWindow(qtw.QWidget, Ui_Form):
         self.output_EfficiencyConstraints.setText(self.model.list_to_string(self.model.efficiency))
 
     def doPlot(self):
-        self.model.plot_data(ax1=self.ax, ax2=self.ax2)
+        self.model.plot_data()
+        self.canvas.draw()
 
 
 if __name__ == '__main__':
